@@ -44,7 +44,7 @@ socket.on('send_message_response',function(payload){
 
 }
 
-$('#messages').append('<p><b>'+payload.username+'says:</b> '+payload.message+'</p>');
+$('#messages').append('<p><b>' +payload.username+' says:</b> '+payload.message+'</p>');
 
 });
 
