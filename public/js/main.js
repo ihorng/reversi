@@ -114,7 +114,7 @@ if(dom_elements.length !== 0){
 }
 
 /* Manage the message that player has left */
-	var newHTML = '<p>'+payload.username+ 'has left the lobby </p>';
+	var newHTML = '<p>'+payload.username+ ' has left the lobby </p>';
 	var newNode = $(newHTML);
 	newNode.hide();
 	$('#messages').append(newNode);
