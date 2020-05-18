@@ -105,16 +105,16 @@ if(payload.socket_id == socket.id){
 }
 
 
-/* If someone left the room the animate out all their content */
-var dom_elements = $('.socket_'+payload.socket.id);
+/* If someone left the room then animate out all their content */
+var dom_elements = $('.socket_'+payload.socket_id);
 
 /* If something exists*/
-if(dom_elements.length == 0){
+if(dom_elements.length !== 0){
 	don_elements.slideUp(1000);
 }
 
 /* Manage the message that player has left */
-	var newHTML = '<p>'+payload.username+ ' has left the lobby </p>';
+	var newHTML = '<p>'+payload.username+ 'has left the lobby </p>';
 	var newNode = $(newHTML);
 	newNode.hide();
 	$('#messages').append(newNode);
