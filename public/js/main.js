@@ -14,12 +14,12 @@ function getURLParameters(whichParam)
 }
 
 var username = getURLParameters('username');
-if ('underfined'== typeof username || !username){
+if ('undefined'== typeof username || !username){
 	username = 'Anonymous_'+Math.random();
 }
 
 var chat_room = getURLParameters('game_id');
-if ('underfined'== typeof chat_room || !chat_room){
+if ('undefined'== typeof chat_room || !chat_room){
 	chat_room = 'lobby';
 }
 
@@ -49,13 +49,13 @@ var dom_elements = $('.socket_'+payload.socket_id);
 /* If we don't already have an entry for this person*/
 if(dom_elements.length == 0){
 	var nodeA = $ ('<div></div>');
-	nodeA.addClass('socket_ '+payload.socket_id);
+	nodeA.addClass('socket_'+payload.socket_id);
 
 	var nodeB = $ ('<div></div>');
-	nodeB.addClass('socket_ '+payload.socket_id);
+	nodeB.addClass('socket_'+payload.socket_id);
 
 	var nodeC = $ ('<div></div>');
-	nodeC.addClass('socket_ '+payload.socket_id);
+	nodeC.addClass('socket_'+payload.socket_id);
 
 	nodeA.addClass('w-100');
 
@@ -109,8 +109,8 @@ if(payload.socket_id == socket.id){
 var dom_elements = $('.socket_'+payload.socket_id);
 
 /* If something exists*/
-if(dom_elements.length !== 0){
-	don_elements.slideUp(1000);
+if(dom_elements.length != 0){
+	dom_elements.slideUp(1000);
 }
 
 /* Manage the message that player has left */
