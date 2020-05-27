@@ -409,7 +409,7 @@ socket.on('game_update',function(payload){
 	}
 
 	$('#blacksum').html(blacksum);
-	$('#whitesum').html(blacksum);
+	$('#whitesum').html(whitesum);
 
 	old_board = board;
 
